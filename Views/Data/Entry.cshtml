@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Data Entry";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Jewellery Certification Data Entry</h2>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Certificate Number</label>
+            <input type="text" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Owner Name</label>
+            <input type="text" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Jewellery Type</label>
+            <input type="text" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Jewellery Description</label>
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Entry</button>
+    </form>
+</div>

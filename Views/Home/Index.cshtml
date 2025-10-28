@@ -1,0 +1,255 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero text-center" aria-label="Jewellery Certification">
+    <h1 class="hero-title">Jewellery Certification</h1>
+    <p class="hero-subtitle">
+        Explore, verify, and authenticate exquisite jewellery pieces.
+    </p>
+</section>
+
+<div class="container my-5">
+    <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+            <div class="card jewellery-card">
+                <div class="image-container">
+                    <img src="~/images/jewel33.png" class="card-img-top jewellery-img" alt="Elegant Necklace">
+                    <div class="overlay">
+                        <p class="overlay-text">Certified diamond and gold craftsmanship</p>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Elegant Necklace</h5>
+                    <p class="card-text">Premium cut diamonds with verified authenticity.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card jewellery-card">
+                <div class="image-container">
+                    <img src="~/images/jewel2.png" class="card-img-top jewellery-img" alt="Luxury Ring">
+                    <div class="overlay">
+                        <p class="overlay-text">Authentic hallmark and verification report</p>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Luxury Ring</h5>
+                    <p class="card-text">Hallmarked gold with independent certification.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card jewellery-card">
+                <div class="image-container">
+                    <img src="~/images/earring.png" class="card-img-top jewellery-img" alt="Beautiful Earrings">
+                    <div class="overlay">
+                        <p class="overlay-text">Delicate artistry with guaranteed purity</p>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Beautiful Earrings</h5>
+                    <p class="card-text">Expertly crafted with trusted provenance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Design tokens (limit to 5 colors total) */
+    :root{
+        --bg: #0f0f10;        /* charcoal */
+        --surface: #171819;   /* deep slate */
+        --text: #f5f5f4;      /* off-white */
+        --primary: #d4af37;   /* gold */
+        --accent: #d99aa2;    /* soft rose */
+        --radius: 16px;
+        --logo-url: url('/images/companylogo.png'); /* update path if needed */
+        --logo-size: 100px;                           /* adjust size if needed */
+    }
+
+    /* Page base */
+    body{
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hero */
+    .hero{
+        padding: 56px 16px 8px;
+    }
+    .hero-title{
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        font-size: 2.25rem;
+        color: var(--text);
+        margin-bottom: 8px;
+        text-wrap: balance;
+    }
+    .hero-subtitle{
+        color: rgba(245, 245, 244, 0.8);
+        font-size: 1.05rem;
+        margin: 0 auto;
+        max-width: 720px;
+    }
+
+    /* Cards */
+    .jewellery-card{
+        background: var(--surface);
+        border: 1px solid rgba(212, 175, 55, 0.22);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+        cursor: pointer;
+    }
+    .jewellery-card:hover{
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 14px 36px rgba(212, 175, 55, 0.22);
+        border-color: rgba(212, 175, 55, 0.45);
+    }
+
+    /* Image and overlay */
+    .image-container{
+        position: relative;
+        overflow: hidden;
+    }
+    .jewellery-img{
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+    .jewellery-card:hover .jewellery-img{
+        transform: scale(1.08);
+    }
+    .overlay{
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,0.55);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        padding: 18px;
+        text-align: center;
+        backdrop-filter: blur(4px);
+    }
+    .image-container:hover .overlay{
+        opacity: 1;
+    }
+    .overlay-text{
+        color: var(--text);
+        font-size: 0.98rem;
+        line-height: 1.6;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        max-width: 90%;
+        margin: 0;
+    }
+
+    /* Card text */
+    .card-title{
+        color: var(--text);
+        font-weight: 600;
+        margin-top: 12px;
+        transition: color 0.25s ease;
+    }
+    .jewellery-card:hover .card-title{
+        color: var(--accent); /* soft rose accent on hover */
+    }
+    .card-text{
+        color: rgba(245, 245, 244, 0.75); /* use opacity instead of extra color */
+        margin-bottom: 16px;
+    }
+
+    /* Buttons - override Bootstrap primary with gold */
+    .btn-primary{
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #111; /* maintain contrast on gold */
+        font-weight: 600;
+        border-radius: calc(var(--radius) - 6px);
+        padding: 10px 16px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus{
+        background-color: #b8922f; /* darker gold */
+        border-color: #b8922f;
+        color: #0b0b0b;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
+    }
+    .btn-primary:active{
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    /* Navbar matches Data Entry theme: white text, gold hover/active, dark bg, gold border, visible toggler, styled dropdowns */
+    .navbar {
+        --bs-navbar-color: #fff;
+        --bs-navbar-hover-color: var(--primary);
+        --bs-navbar-brand-color: #fff;
+        --bs-navbar-brand-hover-color: var(--primary);
+        background-color: rgba(15, 16, 16, 0.9) !important; /* dark translucent */
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);   /* subtle gold line */
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link,
+    .navbar .navbar-toggler {
+        color: #fff !important;
+    }
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active {
+        color: var(--primary) !important;
+        opacity: 1;
+    }
+    .navbar .navbar-toggler { border-color: rgba(255,255,255,0.55); }
+    .navbar .navbar-toggler-icon { filter: invert(1); }
+    /* Dropdowns on dark theme */
+    .dropdown-menu {
+        background-color: var(--surface);
+        border-color: rgba(212, 175, 55, 0.25);
+    }
+    .dropdown-item { color: var(--text); }
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        color: var(--primary);
+        background-color: rgba(255,255,255,0.03);
+    }
+    .navbar .navbar-brand{
+        position: relative;
+        padding-left: 40px;              /* space for the logo */
+        display: inline-flex;
+        align-items: center;
+    }
+    .navbar .navbar-brand::before{
+        content: "";
+        width: var(--logo-size);
+        height: var(--logo-size);
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: var(--logo-url);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
+    }
+    /* high-DPI tweak */
+    @@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+        .navbar .navbar-brand::before{ image-rendering: -webkit-optimize-contrast; }
+    }
+</style>

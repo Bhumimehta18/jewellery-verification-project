@@ -1,0 +1,25 @@
+﻿/* _Layout.cshtml.css */
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #5a233e !important;
+}
+
+/* Active nav-link highlight */
+.nav-link.active, .nav-link:hover {
+    color: #d0a06b !important;
+}
+
+/* Main container spacing */
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Add shadow to cards consistently */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,344 @@
+@{
+    ViewData["Title"] = "Login";
+    Layout = null; // Standalone dark theme page
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@((ViewData["Title"] as string) ?? "Login") - Jewellery Certification</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        /* ===============================
+           DESIGN TOKENS
+        =============================== */
+        :root {
+            --bg: #000000;          /* page background (true black) */
+            --surface: #121314;     /* panels / cards (deep charcoal) */
+            --surface-2: #0e0f10;   /* inputs */
+            --text: #f5f5f4;        /* off-white text */
+            --primary: #d4af37;     /* gold accent */
+            --radius: 14px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ===============================
+           PAGE LAYOUT
+        =============================== */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        @@media (max-width: 992px) {
+            .login-container {
+                flex-direction: column;
+            }
+        }
+
+        /* ===============================
+           LEFT PANEL
+        =============================== */
+        .left-panel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            position: relative;
+            background: linear-gradient(180deg, rgba(18,19,20,0.96), rgba(18,19,20,0.92));
+            border-right: 1px solid rgba(212,175,55,0.18);
+        }
+
+        .left-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('~/images/newlogo.png') no-repeat center;
+            background-size: 320px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .left-panel-content {
+            position: relative;
+            z-index: 1;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        /* ===============================
+           LOGO STYLING (ROYAL LOOK)
+        =============================== */
+        .company-logo {
+            max-width: 200px; /* increased size */
+            margin-bottom: 22px;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .company-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 22px rgba(212,175,55,0.6)); /* gold glow */
+        }
+
+        .left-panel h2 {
+            font-weight: 700;
+            letter-spacing: .3px;
+            margin-bottom: 6px;
+        }
+
+        .left-panel p {
+            color: rgba(245,245,244,.85);
+            margin-bottom: 18px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        @@media (min-width: 576px) {
+            .features { grid-template-columns: 1fr 1fr; }
+        }
+
+        .feature-item {
+            background: var(--surface);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 12px;
+            padding: .9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(245,245,244,.92);
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+
+        .feature-item i {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(212,175,55,0.16);
+            border-color: rgba(212,175,55,0.32);
+        }
+
+        .cta-btn {
+            margin-top: 6px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #111;
+            border: none;
+            font-weight: 700;
+            transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
+        }
+
+        .cta-btn:hover {
+            background: #b8922f;
+            box-shadow: 0 10px 24px rgba(212,175,55,0.28);
+            transform: translateY(-1px);
+        }
+
+        /* ===============================
+           RIGHT PANEL
+        =============================== */
+        .right-panel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            background: radial-gradient(1200px 600px at 70% 10%, rgba(212,175,55,0.06), transparent 60%) no-repeat;
+        }
+
+        /* ===============================
+           LOGIN CARD
+        =============================== */
+        .login-card {
+            width: 92%;
+            max-width: 440px;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid rgba(212,175,55,0.18);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+        }
+
+        .login-card h4 {
+            color: var(--text);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+
+        /* ===============================
+           FORM CONTROLS
+        =============================== */
+        .form-label {
+            color: rgba(245,245,244,.92);
+            font-weight: 600;
+        }
+
+        .form-control {
+            background: var(--surface-2);
+            color: var(--text);
+            border: 1px solid rgba(212,175,55,0.22);
+            border-radius: 10px;
+            padding: .7rem .9rem;
+            caret-color: var(--primary);
+        }
+
+        .form-control::placeholder {
+            color: rgba(245,245,244,.65);
+        }
+
+        .form-control:focus {
+            background: var(--surface-2);
+            color: var(--text);
+            border-color: #b8922f;
+            box-shadow: 0 0 0 .2rem rgba(212,175,55,0.28);
+        }
+
+        /* ===============================
+           BUTTONS
+        =============================== */
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #111;
+            font-weight: 700;
+            padding: .75rem;
+            border-radius: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #b8922f;
+            border-color: #b8922f;
+        }
+
+        /* ===============================
+           ALERTS + FOOTER NOTE
+        =============================== */
+        .alert-danger {
+            background: #3a1f21;
+            color: #ffd5db;
+            border-color: #6c2a30;
+            border-radius: 10px;
+        }
+
+        .meta {
+            color: rgba(245,245,244,.7);
+            font-size: .9rem;
+        }
+
+        .link-muted {
+            color: rgba(245,245,244,.85);
+            text-decoration: none;
+        }
+
+        .link-muted:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- LEFT SIDE -->
+        <div class="left-panel">
+            <div class="left-panel-content">
+                <img src="~/images/newlogo.png" alt="Company Logo" class="company-logo" />
+                <h2>Jewellery Certification</h2>
+                <p>Secure • Reliable • Trusted</p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <i class="bi bi-shield-lock-fill"></i>
+                        <span>Advanced security for jewellery records</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-gem"></i>
+                        <span>Authenticate and track jewellery items</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-people-fill"></i>
+                        <span>User-friendly platform for all</span>
+                    </div>
+                </div>
+
+                <button class="cta-btn" type="button">Learn More</button>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-panel">
+            <div class="login-card">
+                <h4>Login</h4>
+                <form asp-action="Login" asp-controller="Account" method="post" class="needs-validation" novalidate>
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input id="username" type="text" class="form-control" name="username" placeholder="Enter your username" required />
+                        <div class="invalid-feedback">Username is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Enter your password" required />
+                        <div class="invalid-feedback">Password is required.</div>
+                    </div>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mb-3">@ViewBag.Error</div>
+                    }
+
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3 meta">
+                        <a class="link-muted" href="#">Forgot password?</a>
+                        <span>Contact support if you need help.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Bootstrap validation
+        (function () {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>

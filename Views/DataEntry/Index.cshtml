@@ -1,0 +1,192 @@
+@model JewelleryVerificationProject.Models.Jewellery
+
+
+@{
+    ViewData["Title"] = "Data Entry";
+}
+
+<!-- Dark Luxury Theme Styles -->
+<style>
+    :root {
+        --bg: #000000;
+        --surface: #111315;
+        --surface-2: #181a1c;
+        --text: #f5f5f4;
+        --primary: #d4af37;
+        --accent: #d99aa2;
+        --radius: 16px;
+        --logo-url: url('/images/companylogo.png');
+        --logo-size: 100px;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+    }
+
+    h2, h5 {
+        color: var(--text);
+    }
+
+    .card {
+        background: var(--surface);
+        border: 1px solid rgba(212, 175, 55, 0.22);
+        border-radius: var(--radius);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        --bs-card-bg: var(--surface) !important;
+    }
+
+    .panel-dark {
+        background-color: var(--surface) !important;
+    }
+
+    label {
+        color: rgba(245, 245, 244, 0.95) !important;
+        font-weight: 600;
+    }
+
+    .form-control,
+    .form-select {
+        background-color: var(--surface-2);
+        color: var(--text);
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .form-control::placeholder {
+        color: rgba(245, 245, 244, 0.72);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #b8922f;
+        box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.20);
+    }
+
+    .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: #000;
+        font-weight: 600;
+    }
+
+    .btn-primary:hover {
+        background-color: #b8922f;
+        border-color: #b8922f;
+        color: #000;
+    }
+
+    .alert {
+        border-radius: var(--radius);
+        margin-top: 15px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Data Entry</h2>
+    <p class="lead">This page allows users to enter jewellery verification records.</p>
+
+    <!-- Data Entry Form -->
+    <div class="card panel-dark p-4 shadow-sm">
+        <form asp-action="Index" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label asp-for="CompanyCode" class="form-label">Company Code / Branch</label>
+                <select asp-for="CompanyCode" class="form-select" required>
+                    <option value="">--Select Company / Branch--</option>
+                    <option value="EL">EL - UNI DESIGN ELITE</option>
+                    <option value="UD1">UD1 - UNI DESIGN UNIT 1</option>
+                    <option value="UD2">UD2 - UNI DESIGN UNIT 2</option>
+                    <option value="UD3">UD3 - UNI DESIGN UNIT 3</option>
+                    <option value="UDI">UDI - UNI DESIGN INDIA</option>
+                    <option value="UND">UND - NOUVEAU</option>
+                </select>
+                <span asp-validation-for="CompanyCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BagNo" class="form-label"></label>
+                <input asp-for="BagNo" class="form-control" placeholder="Enter Bag Number" required />
+                <span asp-validation-for="BagNo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="OrderNo" class="form-label"></label>
+                <input asp-for="OrderNo" class="form-control" placeholder="Enter Order Number" required />
+                <span asp-validation-for="OrderNo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DesignNo" class="form-label"></label>
+                <input asp-for="DesignNo" class="form-control" placeholder="Enter Design Number" required />
+                <span asp-validation-for="DesignNo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BagQN" class="form-label">Bag Quantity</label>
+                <input asp-for="BagQN" class="form-control" placeholder="Enter Bag Quantity" required />
+                <span asp-validation-for="BagQN" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Customer" class="form-label"></label>
+                <input asp-for="Customer" class="form-control" placeholder="Enter Customer Name" required />
+                <span asp-validation-for="Customer" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CertificateType" class="form-label"></label>
+                <select asp-for="CertificateType" class="form-select" required>
+                    <option value="">Select Certificate Type</option>
+                    <option value="BIS">BIS</option>
+                    <option value="DBCoO">DBCoO</option>
+                    <option value="DGLA">DGLA</option>
+                    <option value="DHC">DHC</option>
+                    <option value="IDT">IDT</option>
+                    <option value="GSI">GSI</option>
+                    <option value="IGI">IGI</option>
+                    <option value="PGI">PGI</option>
+                    <option value="SGL">SGL</option>
+                </select>
+                <span asp-validation-for="CertificateType" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CertificateNumber" class="form-label"></label>
+                <input asp-for="CertificateNumber" class="form-control" placeholder="Enter Certificate Number" required />
+                <span asp-validation-for="CertificateNumber" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CertificateEnterDate" class="form-label"></label>
+                <input asp-for="CertificateEnterDate" type="date" class="form-control" required />
+                <span asp-validation-for="CertificateEnterDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="GrossWeight" class="form-label">Gross Weight (grams)</label>
+                <input asp-for="GrossWeight" type="number" step="0.01" min="0" class="form-control" placeholder="Enter Gross Weight" required />
+                <span asp-validation-for="GrossWeight" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DocNumber" class="form-label">Document Number</label>
+                <input asp-for="DocNumber" class="form-control" placeholder="Enter Document Number" required />
+                <span asp-validation-for="DocNumber" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">@ViewBag.Message</div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

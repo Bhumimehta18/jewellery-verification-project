@@ -1,0 +1,155 @@
+@{
+    ViewData["Title"] = "Analytics";
+}
+
+<section class="container py-4">
+  <header class="mb-4">
+    <h2 class="page-title">Analytics Dashboard</h2>
+    <p class="page-subtitle">This page will show data analysis and visual insights about jewellery verification.</p>
+  </header>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm mb-4 analytics-card">
+        <h5 class="mb-2">Total Records</h5>
+        <p class="display-6 fw-semibold">120</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm mb-4 analytics-card">
+        <h5 class="mb-2">Most Common Jewellery Type</h5>
+        <p class="display-6 fw-semibold">Necklace</p>
+      </div>
+    </div>
+  </div>
+
+   Optional chart area 
+  <div class="card p-4 shadow-sm mb-4 analytics-card">
+    <h5 class="mb-3">Overview</h5>
+    <div class="placeholder-chart d-flex align-items-center justify-content-center">
+      <span class="text-muted">Charts will appear here</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* apply the same luxury dark theme used on other pages */
+  :root{
+    --bg: #000;               /* page background: true black */
+    --surface: #121314;       /* deep charcoal for cards/panels */
+    --surface-2: #0e0f10;     /* slightly darker for inputs/accents */
+    --text: #f5f5f4;          /* off-white text */
+    --muted: rgba(245,245,244,0.75);
+    --primary: #d4af37;       /* gold */
+    --accent: #d99aa2;        /* soft rose (subtle) */
+    --radius: 16px;
+    --logo-url: url('/images/companylogo.png'); /* update path if needed */
+    --logo-size: 100px;
+  }
+
+  body{
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  }
+
+  /* Navbar to white like other pages */
+  .navbar{
+    /* background-color: rgba(0,0,0,0.75);  uncomment if you want a solid bar */
+    border-bottom: 1px solid rgba(212,175,55,0.18);
+  }
+  .navbar .navbar-brand,
+  .navbar .nav-link,
+  .navbar .navbar-toggler,
+  .navbar .navbar-text{
+    color: var(--text) !important;
+  }
+  .navbar .nav-link:hover,
+  .navbar .nav-link:focus,
+  .navbar .navbar-brand:hover{
+    color: var(--primary) !important;
+  }
+  .navbar .navbar-toggler{
+    border-color: rgba(245,245,244,0.35);
+  }
+  .navbar .navbar-brand{
+    position: relative;
+    padding-left: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .navbar .navbar-brand::before{
+    content: "";
+    width: var(--logo-size);
+    height: var(--logo-size);
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: var(--logo-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+  }
+  @@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+    .navbar .navbar-brand::before{ image-rendering: -webkit-optimize-contrast; }
+  }
+
+  .page-title{
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+  .page-subtitle{
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Cards */
+  .analytics-card{
+    background-color: var(--surface) !important;
+    border: 1px solid rgba(212,175,55,0.22) !important;
+    border-radius: var(--radius);
+    color: var(--text);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .analytics-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(212,175,55,0.20);
+    border-color: rgba(212,175,55,0.40);
+  }
+  .analytics-card h5{ color: var(--text); }
+  .analytics-card .display-6{ color: var(--text); }
+
+  /* Kill any white utilities that may sneak in */
+  .bg-white, .bg-light, .card.bg-white, .card.bg-light, .card .card-body.bg-white, .card .card-body.bg-light{
+    background-color: var(--surface) !important;
+  }
+
+  /* Buttons to gold */
+  .btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #111;
+    font-weight: 600;
+    border-radius: calc(var(--radius) - 6px);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus{
+    background-color: #b8922f;
+    border-color: #b8922f;
+    color: #0b0b0b;
+    box-shadow: 0 8px 22px rgba(212,175,55,0.35);
+  }
+
+  /* Placeholder chart box */
+  .placeholder-chart{
+    height: 220px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+    border: 1px dashed rgba(245,245,244,0.2);
+    border-radius: calc(var(--radius) - 6px);
+  }
+  .text-muted{ color: var(--muted) !important; }
+</style>

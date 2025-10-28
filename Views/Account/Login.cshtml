@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+<h1>Welcome, @User.Identity.Name!</h1>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Data Entry</h5>
+                <p class="card-text">Enter & manage jewellery records.</p>
+                <a class="btn btn-outline-primary" asp-controller="DataEntry" asp-action="Index">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Analytics</h5>
+                <p class="card-text">View charts and reports.</p>
+                <a class="btn btn-outline-primary" asp-controller="Analytics" asp-action="Index">Go</a>
+            </div>
+        </div>
+    </div>
+</div>
