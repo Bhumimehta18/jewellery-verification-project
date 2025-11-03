@@ -1,18 +1,17 @@
-# Use official ASP.NET runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 8080
-
-# Build stage
+# Base SDK image
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
-COPY ["jewellery-verification-project.csproj", "./"]
-RUN dotnet restore "./jewellery-verification-project.csproj"
-COPY . .
-RUN dotnet publish "jewellery-verification-project.csproj" -c Release -o /app/publish
 
-# Final stage
-FROM base AS final
+# ✅ Use correct path to .csproj
+COPY ["JewelleryVerificationProject/JewelleryVerificationProject.csproj", "JewelleryVerificationProject/"]
+
+RUN dotnet restore "JewelleryVerificationProject/JewelleryVerificationProject.csproj"
+COPY . .
+WORKDIR "/src/JewelleryVerificationProject"
+RUN dotnet build "JewelleryVerificationProject.csproj" -c Release -o /app/build
+RUN dotnet publish "JewelleryVerificationProject.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "jewellery-verification-project.dll"]
+ENTRYPOINT ["dotnet", "JewelleryVerificationProject.dll"]
