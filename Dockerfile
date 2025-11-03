@@ -1,17 +1,22 @@
-# Base SDK image
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+# Use the official .NET SDK image to build the app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# ✅ Use correct path to .csproj
-COPY ["JewelleryVerificationProject/JewelleryVerificationProject.csproj", "JewelleryVerificationProject/"]
+# Copy the csproj and restore as distinct layers
+COPY ["jewellery vertification project.csproj", "./"]
+RUN dotnet restore "jewellery vertification project.csproj"
 
-RUN dotnet restore "JewelleryVerificationProject/JewelleryVerificationProject.csproj"
+# Copy everything else and build the project
 COPY . .
-WORKDIR "/src/JewelleryVerificationProject"
-RUN dotnet build "JewelleryVerificationProject.csproj" -c Release -o /app/build
-RUN dotnet publish "JewelleryVerificationProject.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "jewellery vertification project.csproj" -c Release -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "JewelleryVerificationProject.dll"]
+
+# Set environment variables for production
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "jewellery vertification project.dll"]
