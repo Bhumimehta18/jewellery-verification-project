@@ -17,65 +17,73 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = jewellery_vertification_project
 build_property.RootNamespace = jewellery_vertification_project
-build_property.ProjectDir = C:\Users\virti\OneDrive\Desktop\unidesign project\jewellery verification project\
+build_property.ProjectDir = C:\Users\DELL\OneDrive\Desktop\unidesign project\jewellery verification project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\virti\OneDrive\Desktop\unidesign project\jewellery verification project
+build_property.MSBuildProjectDirectory = C:\Users\DELL\OneDrive\Desktop\unidesign project\jewellery verification project
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Account/Login.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Account/Welcome.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Account/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Analytics/Index.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Analytics/CustomerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hbHl0aWNzXEN1c3RvbWVyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Analytics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hbHl0aWNzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/DataEntry/Index.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/DataEntry/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUVudHJ5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Data/Entry.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Data/Entry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVxFbnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Home/Index.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/Error.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/JewelleryRecords/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSmV3ZWxsZXJ5UmVjb3Jkc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/WelcomeLayout.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/WelcomeLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFdlbGNvbWVMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_ViewImports.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_Viewsimport.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_Viewsimport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdzaW1wb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_ViewStart.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/virti/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/_Layout.cshtml]
+[C:/Users/DELL/OneDrive/Desktop/unidesign project/jewellery verification project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ojoh6mhghb

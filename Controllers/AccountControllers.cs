@@ -1,23 +1,40 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace JewelleryVerificationProject.Controllers
 {
+    // ✅ Custom attribute to protect pages (checks if user is logged in)
+    public class SessionCheckAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            var session = context.HttpContext.Session.GetString("Username");
+            if (string.IsNullOrEmpty(session))
+            {
+                // Redirect to login page if no session found
+                context.Result = new RedirectToActionResult("Welcome", "Account", null);
+            }
+            base.OnActionExecuting(context);
+        }
+    }
+
     public class AccountController : Controller
     {
-        // Show welcome/login page
+        // ✅ Show login page
         public IActionResult Welcome()
         {
             return View();
         }
 
-        // Handle login form
+        // ✅ Handle login
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            // ✅ Simple check (replace with real authentication later)
+            // Simple dummy authentication (you can link DB later)
             if (username == "admin" && password == "12345")
             {
-                // Redirect to home
+                // ✅ Save session
+                HttpContext.Session.SetString("Username", username);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -25,10 +42,11 @@ namespace JewelleryVerificationProject.Controllers
             return View("Welcome");
         }
 
+        // ✅ Logout
         public IActionResult Logout()
         {
-            // Clear authentication later if you add Identity
-            return RedirectToAction("Welcome");
+            HttpContext.Session.Clear(); // remove session
+            return RedirectToAction("Welcome", "Account"); // back to login
         }
     }
 }

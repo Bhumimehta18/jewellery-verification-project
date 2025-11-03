@@ -6,6 +6,10 @@ namespace JewelleryVerificationProject.Controllers
     {
         public IActionResult Index()
         {
+            // 🔒 Security Check
+            if (HttpContext.Session.GetString("Username") == null)
+                return RedirectToAction("Welcome", "Account");
+
             return View();
         }
     }

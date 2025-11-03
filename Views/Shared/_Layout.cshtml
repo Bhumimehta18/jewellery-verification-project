@@ -3,48 +3,64 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"] - Jewellery Cerification </title>
+    <title>@ViewData["Title"] - Jewellery Certification</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/_Layout.cshtml.css" />
     <link rel="stylesheet" href="~/css/premium-ui.css" />
-
-    <!-- In _Layout.cshtml, inside the <head> tag -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-<!-- In _Layout.cshtml, before the closing </body> tag -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="/">Jewellery Cerification</a>
+            <a class="navbar-brand fw-bold text-primary" href="/">Jewellery Certification</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
-                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    @if (Context.Session.GetString("Username") != null)
                     {
-                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="DataEntry" asp-action="Index">Data Entry</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Analytics" asp-action="Index">Analytics</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Logout">Logout (@User.Identity.Name)</a></li>
+                        <!-- ✅ When logged in -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="DataEntry" asp-action="Index">Data Entry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Analytics" asp-action="Index">Analytics</a>
+                        </li>
+                        <!-- ✅ Newly added link -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="JewelleryRecords" asp-action="Index">Jewellery Records</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">
+                                Logout (@Context.Session.GetString("Username"))
+                            </a>
+                        </li>
                     }
                     else
                     {
+                        <!-- ✅ When logged out -->
                         <li class="nav-item">
-                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" asp-controller="DataEntry" asp-action="Index">Data Entry</a>
-                </li>
-               <li class="nav-item">
-               <a class="nav-link" asp-controller="Analytics" asp-action="Index">Analytics</a></li>
-               <li class="nav-item">
-               <a class="nav-link" asp-controller="Account" asp-action="Welcome">Login</a></li>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="DataEntry" asp-action="Index">Data Entry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Analytics" asp-action="Index">Analytics</a>
+                        </li>
+                        <!-- ✅ Show Jewellery Records for guests too (optional) -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="JewelleryRecords" asp-action="Index">Jewellery Records</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Welcome">Login</a>
+                        </li>
                     }
-               
                 </ul>
             </div>
         </div>
@@ -56,7 +72,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
-    </body>
+</body>
 </html>
-
-

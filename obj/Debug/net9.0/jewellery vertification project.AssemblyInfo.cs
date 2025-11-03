@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("jewellery vertification project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db69e7291c4a7fac451f85d00c04eab7b50b1d44")]
 [assembly: System.Reflection.AssemblyProductAttribute("jewellery vertification project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("jewellery vertification project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

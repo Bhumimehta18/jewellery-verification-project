@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\virti\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj": {}
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\virti\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj": {
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\virti\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
         "projectName": "jewellery vertification project",
-        "projectPath": "C:\\Users\\virti\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
-        "packagesPath": "C:\\Users\\virti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\virti\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\virti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,6 +44,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.1.2, )"
@@ -72,6 +73,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
             }
           },
           "imports": [
