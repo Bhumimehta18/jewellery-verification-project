@@ -1,5 +1,6 @@
-using JewelleryVerificationProject.Data;
 using Microsoft.EntityFrameworkCore;
+using JewelleryVerificationProject.Data;  // your DbContext namespace
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,5 +42,10 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Welcome}/{id?}");
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate(); // ✅ ensures tables like "Jewellery" are created
+}
 
 app.Run();

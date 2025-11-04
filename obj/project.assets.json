@@ -5179,6 +5179,7 @@
       "EPPlus >= 8.2.1",
       "Microsoft.Data.SqlClient >= 6.1.2",
       "Microsoft.Data.Sqlite >= 9.0.10",
+      "Microsoft.EntityFrameworkCore >= 9.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.10",
@@ -5191,9 +5192,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
-      "projectName": "jewellery vertification project",
-      "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\jewellery vertification project.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\JewelleryVerificationProject.csproj",
+      "projectName": "JewelleryVerificationProject",
+      "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\JewelleryVerificationProject.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\unidesign project\\jewellery verification project\\obj\\",
       "projectStyle": "PackageReference",
@@ -5241,6 +5242,10 @@
             "version": "[6.1.2, )"
           },
           "Microsoft.Data.Sqlite": {
+            "target": "Package",
+            "version": "[9.0.10, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.10, )"
           },

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: jewellery-verification
+    env: dotnet
+    plan: free
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/JewelleryVerificationProject.dll
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

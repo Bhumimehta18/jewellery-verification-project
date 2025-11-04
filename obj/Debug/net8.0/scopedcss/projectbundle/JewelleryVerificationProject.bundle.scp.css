@@ -1,0 +1,26 @@
+/* _content/JewelleryVerificationProject/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* _Layout.cshtml.css */
+
+/* Navbar brand styling */
+.navbar-brand[b-y5pz7ogpwi] {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #5a233e !important;
+}
+
+/* Active nav-link highlight */
+.nav-link.active[b-y5pz7ogpwi], .nav-link:hover[b-y5pz7ogpwi] {
+    color: #d0a06b !important;
+}
+
+/* Main container spacing */
+main.container[b-y5pz7ogpwi] {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Add shadow to cards consistently */
+.card[b-y5pz7ogpwi] {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
